@@ -1,0 +1,74 @@
+div.oneall_social_login {
+  padding-top: 10px;
+}
+
+.oneall_social_login_error {
+  margin-bottom: 20px;
+  background-color: #efdfdf;
+  color: #B80C14;
+  padding: 10px;
+  line-height: 16px;
+  font-size: 12px;
+  border: 1px dashed #B80C14;
+}
+
+.customer-account-login .page-title {
+  position: absolute;
+  max-width: 1260px;
+  width: 1200px;
+  margin-top: -165px;
+}
+
+.loginpage {
+  margin-top: 31px;
+}
+
+.logup {
+  padding-bottom: 5px;
+}
+
+.oneall_social_login iframe {
+  max-width: 100%;
+  width: 100%;
+}
+
+.siginf {
+  max-width: 308px;
+  width: 100%;
+  float: right;
+  margin-right: 230px;
+}
+
+.clr {
+  clear: both;
+}
+
+.registerloginform {
+  max-width: 308px;
+  width: 100%;
+  float: left;
+  position: relative;
+}
+
+.placeregister {
+  padding-bottom: 10px;
+}
+
+.customer-account-create .oneall_social_login_providers {
+  margin-bottom: 25px;
+}
+
+@media ( max-width : 1200px) {
+  .customer-account-login .page-title {
+    max-width: 100%;
+  }
+  .registerloginform,.siginf {
+    float: none;
+    display: inline-block;
+    margin: 0px auto;
+  }
+  .customer-account-login .page-title {
+    position: static;
+    margin-top: 0px;
+  }
+}

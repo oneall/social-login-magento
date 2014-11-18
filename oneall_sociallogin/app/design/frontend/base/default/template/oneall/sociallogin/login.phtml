@@ -1,0 +1,137 @@
+<?php
+/**
+ * @package   	OneAll Social Login
+ * @copyright 	Copyright 2014 http://www.oneall.com - All rights reserved.
+ * @license   	GNU/GPL 2 or later
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307,USA.
+ *
+ * The "GNU General Public License" (GPL) is available at
+ * http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ *
+ */
+
+// Read available providers
+$providers_config = (array) Mage::getStoreConfig ('oneall_sociallogin/services');
+
+// Enabled providers
+$providers_enabled = array ();
+
+// Build Social Network List
+foreach ($providers_config as $provider => $is_enabled)
+{
+	// Enabled?
+	if ($is_enabled == 'setyes')
+	{
+		$providers_enabled [] = $provider;
+	}
+}
+
+//At least one providers needs to be enabled
+if (count ($providers_enabled) > 0)
+{
+	// Transform to JSON
+	$providers = "'" . implode ("','", $providers_enabled) . "'";
+
+	//What are we doing?
+	switch (Mage::app ()->getFrontController ()->getAction ()->getFullActionName ())
+	{
+		// We are on the login oage
+		case 'customer_account_login':
+			?>
+				<div class="oneall_social_login loginpage siginf">
+					<?php
+						//Random integer to prevent id collisions
+						$rand = rand ();
+
+						//Caption
+						$caption = trim (Mage::getStoreConfig ('oneall_sociallogin/settings/textsignin'));
+						if ( ! empty ($caption))
+						{
+							echo '<h4 class="tlog logup">' . $caption . '</h4>';
+						}
+					?>
+					<div class="oneall_social_login_providers" id="oneall_social_login_providers_<?php echo $rand; ?>"></div>
+					<script type="text/javascript">
+						var _oneall = _oneall || [];
+						_oneall.push(['social_login', 'set_providers', [<?php echo $providers; ?>]]);
+						_oneall.push(['social_login', 'set_callback_uri', (window.location.href + ((window.location.href.split('?')[1] ? '&amp;' : '?') + 'oneall=login'))]);
+						_oneall.push(['social_login', 'set_custom_css_uri', (("https:" == document.location.protocol) ? "https://secure" : "http://public") + '.oneallcdn.com/css/api/socialize/themes/magento/default.css']);
+						_oneall.push(['social_login', 'do_render_ui', 'oneall_social_login_providers_<?php echo $rand; ?>']);
+					</script>
+				</div>
+
+				<div class="oneall_social_login loginpage registerloginform">
+					<?php
+						//Random integer to prevent id collisions
+						$rand = rand ();
+
+						//Caption
+						$caption = trim (Mage::getStoreConfig ('oneall_sociallogin/settings/textsignup'));
+						if ( ! empty ($caption))
+						{
+							echo '<h4 class="tlog logup">' . $caption . '</h4>';
+						}
+					?>
+					<div class="oneall_social_login_providers" id="oneall_social_login_providers_<?php echo $rand; ?>"></div>
+					<script type="text/javascript">
+						var _oneall = _oneall || [];
+						_oneall.push(['social_login', 'set_providers', [<?php echo $providers; ?>]]);
+						_oneall.push(['social_login', 'set_callback_uri', (window.location.href + ((window.location.href.split('?')[1] ? '&amp;' : '?') + 'oneall=login'))]);
+						_oneall.push(['social_login', 'set_custom_css_uri', (("https:" == document.location.protocol) ? "https://secure" : "http://public") + '.oneallcdn.com/css/api/socialize/themes/magento/default.css']);
+						_oneall.push(['social_login', 'do_render_ui', 'oneall_social_login_providers_<?php echo $rand; ?>']);
+					</script>
+				</div>
+				<div class="clr"></div>
+			<?php
+		break;
+
+		//On any other page
+		default:
+			?>
+				<div class="oneall_social_login placeregister">
+					<?php
+
+					//Random integer to prevent id collisions
+					$rand = rand ();
+
+					//Caption
+					$caption = trim (Mage::getStoreConfig ('oneall_sociallogin/settings/textsignup'));
+					if ( ! empty ($caption))
+					{
+						echo '<h4 class="tlog logup">' . $caption . '</h4>';
+					}
+					?>
+					<div class="oneall_social_login_providers" id="oneall_social_login_providers_<?php echo $rand; ?>"></div>
+					<script type="text/javascript">
+						var _oneall = _oneall || [];
+						_oneall.push(['social_login', 'set_providers', [<?php echo $providers; ?>]]);
+						_oneall.push(['social_login', 'set_callback_uri', (window.location.href + ((window.location.href.split('?')[1] ? '&amp;' : '?') + 'oneall=login'))]);
+						_oneall.push(['social_login', 'set_custom_css_uri', (("https:" == document.location.protocol) ? "https://secure" : "http://public") + '.oneallcdn.com/css/api/socialize/themes/magento/default.css']);
+						_oneall.push(['social_login', 'do_render_ui', 'oneall_social_login_providers_<?php echo $rand; ?>']);
+					</script>
+				</div>
+				<div class="clr"></div>
+			<?php
+		break;
+	}
+}
+//N orpoviders enabled
+else
+{
+		?>
+			<div class="oneall_social_login_error">Please enable at least one social network in <strong>System \ Configuration \ OneAll Social Login</strong></div>
+		<?php
+}
