@@ -27,30 +27,33 @@
 class OneAll_SocialLogin_Block_Login extends Mage_Core_Block_Template
 {
 	private $place;
+
 	public function __construct ()
 	{
 		parent::__construct ();
-		if (! $this->getSession ()->isLoggedIn () && Mage::helper ('oneall_sociallogin')->handle_api_callback () !== 'yes')
+
+		if (! $this->getSession ()->isLoggedIn () && ! Mage::helper ('oneall_sociallogin')->handle_api_callback ())
 		{
 			$this->setTemplate ('oneall/sociallogin/login.phtml');
 		}
-		else
-		{
-		}
 	}
+
 	private function getSession ()
 	{
 		return Mage::getSingleton ('customer/session');
 	}
+
 	public function setPlace ($place)
 	{
 		$this->place = $place;
 		return $this;
 	}
+
 	public function getPlace ()
 	{
 		return $this->place;
 	}
+
 	public function getLoginType ($service = '')
 	{
 		return Mage::getStoreConfig ('oneall_sociallogin/' . $service . '/' . $this->getPlace () . '_type');
