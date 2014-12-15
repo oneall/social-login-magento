@@ -147,7 +147,7 @@ class OneAll_SocialLogin_Helper_Data extends Mage_Core_Helper_Abstract
 						// Check if we have a user for this user_token.
 						$customer_id = Mage::getModel ('oneall_sociallogin/entity')->load ($user_token, 'user_token')->customer_id;
 
-						// No user for this token, check if we have a user for this email.
+									// No user for this token, check if we have a user for this email.
 						if (empty ($customer_id))
 						{
 							if (isset ($data->user->identity->emails) and is_array ($data->user->identity->emails))
@@ -179,18 +179,18 @@ class OneAll_SocialLogin_Helper_Data extends Mage_Core_Helper_Abstract
 
 							// Create a new customer.
 							$customer = Mage::getModel ('customer/customer');
-							$customer->setData ('firstname', $data->user->identity->name->givenName);
-							$customer->setData ('lastname', $data->user->identity->name->familyName);
-							$customer->setData ('email', $email);
+							$customer->setFirstname ($data->user->identity->name->givenName);
+							$customer->setLastname ($data->user->identity->name->familyName);
+							$customer->setEmail ($email);
 							$customer->setSkipConfirmationIfEmail ($email);
-							$customer->setData ('password', $password);
-							$customer->setConfirmation ($password);
+							$customer->setPassword ($password);
+							$customer->setPasswordConfirmation ($password);
 
 							// Validate user details.
 							$errors = $customer->validate ();
 
 							// Do we have any errors?
-							if (is_array ($errors) && count ($errors))
+							if (is_array ($errors) && count ($errors) > 0)
 							{
 								Mage::getSingleton ('customer/session')->addError (implode (' ', $errors));
 								return false;
