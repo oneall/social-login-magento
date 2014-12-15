@@ -147,7 +147,7 @@ class OneAll_SocialLogin_Helper_Data extends Mage_Core_Helper_Abstract
 						// Check if we have a user for this user_token.
 						$customer_id = Mage::getModel ('oneall_sociallogin/entity')->load ($user_token, 'user_token')->customer_id;
 
-									// No user for this token, check if we have a user for this email.
+						// No user for this token, check if we have a user for this email.
 						if (empty ($customer_id))
 						{
 							if (isset ($data->user->identity->emails) and is_array ($data->user->identity->emails))
