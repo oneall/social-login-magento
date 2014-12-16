@@ -185,6 +185,7 @@ class OneAll_SocialLogin_Helper_Data extends Mage_Core_Helper_Abstract
 							$customer->setSkipConfirmationIfEmail ($email);
 							$customer->setPassword ($password);
 							$customer->setPasswordConfirmation ($password);
+							$customer->setConfirmation ($password);
 
 							// Validate user details.
 							$errors = $customer->validate ();
