@@ -23,8 +23,8 @@
 			<email>support@oneall.com</email>
 		</author>
 	</authors>
-	<date>2014-12-15</date>
-	<time>12:08:17</time>
+	<date>2014-12-16</date>
+	<time>10:48:42</time>
 	<contents>
 		<target name="magecommunity">
 			<dir name="OneAll">
@@ -34,37 +34,38 @@
 							<dir name="System">
 								<dir name="Config">
 									<dir name="Fieldset">
-										<file name="General.php" hash="20fbab117eae81cbad109c3b555e99d9" />
+										<file name="General.php" hash="e5256ba73e04a09ab90f4a39916427e0" />
 									</dir>
 								</dir>
 							</dir>
 						</dir>
-						<file name="Login.php" hash="e9e05075cf0135ba84124658e3900f8c" />
+						<file name="Login.php" hash="d2d7dbe46b407d8cc3dc369eca98a90a" />
 					</dir>
 					<dir name="Helper">
-						<file name="Data.php" hash="cba896131f336dc8495da079a94155fa" />
+						<file name="Data.php" hash="191fb1b0c70ac7ad0502581d78ac68bf" />
 					</dir>
 					<dir name="Model">
-						<file name="Apiautodetect.php" hash="6ab0deb4f99b1a205126b52bccb01206" />
-						<file name="Apiconnectionhandler.php" hash="83c9bb3729bd94f11ed0593f401cf97b" />
-						<file name="Apiconnectionport.php" hash="7f904e1eca2e618e6f95c24b7e71b093" />
-						<file name="Apiverify.php" hash="8aa2a12318d8c251138fa3e49ab49651" />
-						<file name="Entity.php" hash="a40f9d2c93e16413066987ca1edd8712" />
+						<file name="Apiautodetect.php" hash="fe32b304b9a3e15e45099328bf29bf31" />
+						<file name="Apiconnectionhandler.php" hash="ec60111e5d8bfc1609d83f8532d6444f" />
+						<file name="Apiconnectionport.php" hash="4120ddc8b175d91f2d3cb0a57488876b" />
+						<file name="Apiverify.php" hash="98a6d6a98e096ab53cadd4cc30656de2" />
+						<file name="Entity.php" hash="1f8fe3c8c52aa1a7d91e241aab5dc202" />
 						<dir name="Mysql4">
 							<dir name="Entity">
 								<file name="Collection.php" hash="420f9e47f1a2429f9627e93b338b816d" />
 							</dir>
 							<file name="Entity.php" hash="b2abd06f18048fe564c2b17cf30aed49" />
 						</dir>
-						<file name="Services.php" hash="d4bce23856958465c7fd62fa5a1efcba" />
+						<file name="Services.php" hash="a4da3a4667fd11b9c376076cf840b55a" />
+						<file name="Subdomain.php" hash="457ce6f3e41fe6eda7943270a07f250a" />
 					</dir>
 					<dir name="controllers">
 						<file name="AjaxController.php" hash="fc561a0262bdeb73de4c535b4030ffda" />
 					</dir>
 					<dir name="etc">
 						<file name="adminhtml.xml" hash="b2b2205da48b85a4002c84464a3c7555" />
-						<file name="config.xml" hash="8710b088d3e1f385c3febf353dabae83" />
-						<file name="system.xml" hash="5f3d8593086bfb07b571e6e8e979f842" />
+						<file name="config.xml" hash="be0262e735e86b466fab9734f85ae5e7" />
+						<file name="system.xml" hash="d2291d62cc6cc9a252a3f2833e76a130" />
 					</dir>
 					<dir name="sql">
 						<dir name="oneall_sociallogin_setup">
@@ -79,7 +80,7 @@
 				<dir name="base">
 					<dir name="default">
 						<dir name="layout">
-							<file name="oneall-sociallogin.xml" hash="459f3b6807ec3e94dd1dfa97e0fe6135" />
+							<file name="oneall-sociallogin.xml" hash="741e14c02b790d4ab7b06c089dbb6973" />
 						</dir>
 						<dir name="template">
 							<dir name="oneall">
@@ -95,7 +96,7 @@
 		</target>
 		<target name="mageetc">
 			<dir name="modules">
-				<file name="OneAll_SocialLogin.xml" hash="9054f02d5ed387bb8cb8602aedea3fee" />
+				<file name="OneAll_SocialLogin.xml" hash="a50d33654c5b3d7f12f933d3f79ccca1" />
 			</dir>
 		</target>
 		<target name="mageskin">
