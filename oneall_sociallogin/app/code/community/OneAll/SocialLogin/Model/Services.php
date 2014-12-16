@@ -30,16 +30,16 @@ class OneAll_SocialLogin_Model_Services
 	public function toOptionArray ()
 	{
 		$helper = Mage::helper ("oneall_sociallogin");
-
+		
 		return array (
 			array (
 				'value' => 'setno',
-				'label' => ''
+				'label' => '' 
 			),
 			array (
 				'value' => 'setyes',
-				'label' => $helper->__ ("Enable")
-			)
+				'label' => $helper->__ ("Enable") 
+			) 
 		);
 	}
 }
