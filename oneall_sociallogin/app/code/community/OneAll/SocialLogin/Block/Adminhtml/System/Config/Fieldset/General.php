@@ -23,7 +23,6 @@
  * http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
  */
-
 class OneAll_SocialLogin_Block_Adminhtml_System_Config_Fieldset_General extends Mage_Adminhtml_Block_System_Config_Form_Fieldset
 {
 	protected function _getHeaderHtml ($element)
@@ -39,13 +38,9 @@ class OneAll_SocialLogin_Block_Adminhtml_System_Config_Fieldset_General extends 
 				$html = '<div class="' . $this->_getFrontendClass ($element) . '">';
 			}
 			$html .= $this->_getHeaderTitleHtml ($element);
-
 			$html .= '<input id="' . $element->getHtmlId () . '-state" name="config_state[' . $element->getId () . ']" type="hidden" value="' . (int) $this->_getCollapseState ($element) . '" />';
 			$html .= '<fieldset class="' . $this->_getFieldsetCss ($element) . '" id="' . $element->getHtmlId () . '">';
-			// $html.= '<button style="margin-right:25px; margin-top:-33px; float: right;" onclick="window.open(\'http://docs.oneall.com\')" class="scalable go" type="button" id="gsc_wiki"><span>'.$this->__('OneAll Social Connector Wiki').'</span></button>';
-
 			$html .= '<legend>' . $element->getLegend () . '</legend>';
-
 			$html .= $this->_getHeaderCommentHtml ($element);
 
 			// field label column
@@ -60,7 +55,6 @@ class OneAll_SocialLogin_Block_Adminhtml_System_Config_Fieldset_General extends 
 		{
 			$default = ! $this->getRequest ()->getParam ('website') && ! $this->getRequest ()->getParam ('store');
 			$html = '<div  class="entry-edit-head collapseable" >';
-			// $html.= '<button style="margin-right:25px;float: right;" onclick="window.open(\'http://docs.oneall.com\')" class="scalable go" type="button" id="gsc_wiki"><span>'.$this->__('OneAll Social Connector Wiki').'</span></button>';
 			$html .= '<a id="' . $element->getHtmlId () . '-head" href="#" onclick="Fieldset.toggleCollapse(\'' . $element->getHtmlId () . '\', \'' . $this->getUrl ('*/*/state') . '\'); return false;">' . $element->getLegend () . '</a></div>';
 			$html .= '<input id="' . $element->getHtmlId () . '-state" name="config_state[' . $element->getId () . ']" type="hidden" value="' . (int) $this->_getCollapseState ($element) . '" />';
 			$html .= '<fieldset class="' . $this->_getFieldsetCss () . '" id="' . $element->getHtmlId () . '">';
@@ -80,6 +74,7 @@ class OneAll_SocialLogin_Block_Adminhtml_System_Config_Fieldset_General extends 
 		}
 		return $html;
 	}
+
 	protected function _getFieldsetCss ($element = null)
 	{
 		$configCss = (string) $this->getGroup ($element)->fieldset_css;
