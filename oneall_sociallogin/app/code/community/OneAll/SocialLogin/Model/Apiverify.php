@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package   	OneAll Social Login
  * @copyright 	Copyright 2014 http://www.oneall.com - All rights reserved.
@@ -23,7 +24,7 @@
  *
  */
 
-//Verifies the API Settings
+// Verifies the API Settings.
 class OneAll_SocialLogin_Model_Apiverify
 {
 	public function toOptionArray ()
