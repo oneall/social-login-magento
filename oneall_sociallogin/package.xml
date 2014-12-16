@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
 	<name>OneAll_Sociallogin</name>
-	<version>1.0.0</version>
+	<version>1.1.0</version>
 	<stability>stable</stability>
 	<license>GNU/GPL 2 or later</license>
 	<channel>community</channel>
@@ -23,8 +23,8 @@
 			<email>support@oneall.com</email>
 		</author>
 	</authors>
-	<date>2014-11-18</date>
-	<time>15:08:47</time>
+	<date>2014-12-15</date>
+	<time>12:08:17</time>
 	<contents>
 		<target name="magecommunity">
 			<dir name="OneAll">
@@ -68,7 +68,7 @@
 					</dir>
 					<dir name="sql">
 						<dir name="oneall_sociallogin_setup">
-							<file name="mysql4-install-1.0.0.php" hash="e51670ff053f5391e6626ac9dd22769b" />
+							<file name="mysql4-install-1.1.0.php" hash="e51670ff053f5391e6626ac9dd22769b" />
 						</dir>
 					</dir>
 				</dir>
