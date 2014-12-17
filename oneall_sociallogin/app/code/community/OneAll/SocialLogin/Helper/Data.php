@@ -33,23 +33,18 @@ class OneAll_SocialLogin_Helper_Data extends Mage_Core_Helper_Abstract
 	protected function create_random_email ()
 	{
 		$customer = Mage::getModel ('customer/customer');
-		$website_id = Mage::app ()->getWebsite ()->getId ();
-
-		// Website Id
-		if ($website_id)
-		{
-			$customer->setWebsiteId ($website_id);
-		}
+		$customer->setWebsiteId (Mage::app ()->getWebsite ()->getId ());
 
 		do
 		{
 			// Create a random email.
-			$email = md5 (uniqid (wp_rand (10000, 99000))) . "@example.com";
+			$email = md5 (uniqid (rand (10000, 99000))) . "@example.com";
 
 			// Try to load a customer for it
 			$customer->loadByEmail ($email);
+			$id = $customer->getId ();
 		}
-		while (! $customer->getId ());
+		while (! empty ($id));
 
 		// Done
 		return $email;
@@ -174,11 +169,13 @@ class OneAll_SocialLogin_Helper_Data extends Mage_Core_Helper_Abstract
 								$email_is_random = true;
 							}
 
-							// Generate a random password.
-							$password = $customer->generatePassword (8);
-
 							// Create a new customer.
 							$customer = Mage::getModel ('customer/customer');
+
+							// Generate a password for the customer.
+							$password = $customer->generatePassword (8);
+
+							// Setup customer details.
 							$customer->setFirstname ($data->user->identity->name->givenName);
 							$customer->setLastname ($data->user->identity->name->familyName);
 							$customer->setEmail ($email);
@@ -193,8 +190,9 @@ class OneAll_SocialLogin_Helper_Data extends Mage_Core_Helper_Abstract
 							// Do we have any errors?
 							if (is_array ($errors) && count ($errors) > 0)
 							{
-								Mage::getSingleton ('customer/session')->addError (implode (' ', $errors));
-								return false;
+								// This would break it for Twitter users as they have no first/lastname
+								// Mage::getSingleton ('customer/session')->addError (implode (' ', $errors));
+								// return false;
 							}
 
 							// Save user.
