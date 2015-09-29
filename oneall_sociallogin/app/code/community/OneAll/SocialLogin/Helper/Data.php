@@ -27,6 +27,9 @@
 // Helper
 class OneAll_SocialLogin_Helper_Data extends Mage_Core_Helper_Abstract
 {
+	
+	const OA_USER_AGENT = 'SocialLogin/1.1.1 Magento/1.x (+http://www.oneall.com/)';
+	
 	/**
 	 * Generate a random email address.
 	 */
@@ -386,7 +389,7 @@ class OneAll_SocialLogin_Helper_Data extends Mage_Core_Helper_Abstract
 		// Create HTTP request
 		$defaults = array (
 			'Host' => "Host: $host",
-			'User-Agent' => 'User-Agent: SocialLogin Magento (+http://www.oneall.com/)'
+			'User-Agent' => 'User-Agent: ' . self::OA_USER_AGENT
 		);
 
 		// Enable basic authentication
@@ -490,7 +493,7 @@ class OneAll_SocialLogin_Helper_Data extends Mage_Core_Helper_Abstract
 		curl_setopt ($curl, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt ($curl, CURLOPT_SSL_VERIFYPEER, 0);
 		curl_setopt ($curl, CURLOPT_SSL_VERIFYHOST, 0);
-		curl_setopt ($curl, CURLOPT_USERAGENT, 'SocialLogin Magento (+http://www.oneall.com/)');
+		curl_setopt ($curl, CURLOPT_USERAGENT, self::OA_USER_AGENT);
 
 		// Basic AUTH?
 		if (isset ($options ['api_key']) and isset ($options ['api_secret']))
