@@ -143,7 +143,8 @@ class OneAll_SocialLogin_Helper_Data extends Mage_Core_Helper_Abstract
 						$identity_token = $data->user->identity->identity_token;
 
 						// Check if we have a user for this user_token.
-						$customer_id = Mage::getModel ('oneall_sociallogin/entity')->load ($user_token, 'user_token')->customer_id;
+						$oneall_entity = Mage::getModel ('oneall_sociallogin/entity')->load ($user_token, 'user_token');
+						$customer_id = $oneall_entity->customer_id;
 
 						// No user for this token, check if we have a user for this email.
 						if (empty ($customer_id))
@@ -156,7 +157,14 @@ class OneAll_SocialLogin_Helper_Data extends Mage_Core_Helper_Abstract
 								$customer_id = $customer->getId ();
 							}
 						}
-
+						// If the user does not exist anymore.
+						else if (! Mage::getModel ("customer/customer")->load ($customer_id)->getId ()) 
+						{
+							// Cleanup our table.
+							$oneall_entity->delete ();
+							$customer_id = null;
+						}
+						
 						// This is a new customer.
 						if (empty ($customer_id))
 						{
@@ -179,8 +187,44 @@ class OneAll_SocialLogin_Helper_Data extends Mage_Core_Helper_Abstract
 							$password = $customer->generatePassword (8);
 
 							// Setup customer details.
-							$customer->setFirstname ($data->user->identity->name->givenName);
-							$customer->setLastname ($data->user->identity->name->familyName);
+							$first_name = 'unknown';
+							if (! empty ($data->user->identity->name->givenName))
+							{
+								$first_name = $data->user->identity->name->givenName;
+							}
+							else if (! empty ($data->user->identity->displayName))
+							{
+								$names = explode (' ', $data->user->identity->displayName);
+								$first_name = $names[0];
+							}
+							else if (! empty($data->user->identity->name->formatted))
+							{
+								$names = explode (' ', $data->user->identity->name->formatted);
+								$first_name = $names[0];
+							}
+							$last_name = 'unknown';
+							if (! empty ($data->user->identity->name->familyName))
+							{
+								$last_name = $data->user->identity->name->familyName;
+							}
+							else if (!empty ($data->user->identity->displayName))
+							{
+								$names = explode (' ', $data->user->identity->displayName);
+								if (! empty ($names[1]))
+								{
+									$last_name = $names[1];
+								}
+							}
+							else if (!empty($data->user->identity->name->formatted))
+							{
+								$names = explode (' ', $data->user->identity->name->formatted);
+								if (! empty ($names[1]))
+								{
+									$last_name = $names[1];
+								}
+							}
+							$customer->setFirstname ($first_name);
+							$customer->setLastname ($last_name);
 							$customer->setEmail ($email);
 							$customer->setSkipConfirmationIfEmail ($email);
 							$customer->setPassword ($password);
@@ -194,8 +238,8 @@ class OneAll_SocialLogin_Helper_Data extends Mage_Core_Helper_Abstract
 							if (is_array ($errors) && count ($errors) > 0)
 							{
 								// This would break it for Twitter users as they have no first/lastname
-								// Mage::getSingleton ('customer/session')->addError (implode (' ', $errors));
-								// return false;
+								Mage::getSingleton ('customer/session')->addError (implode (' ', $errors));
+								return false;
 							}
 
 							// Save user.
