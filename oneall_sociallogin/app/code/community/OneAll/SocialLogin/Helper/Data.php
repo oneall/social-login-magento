@@ -248,7 +248,14 @@ class OneAll_SocialLogin_Helper_Data extends Mage_Core_Helper_Abstract
 							// Send email.
 							if (! $email_is_random)
 							{
-								$customer->sendNewAccountEmail ();
+								if ($customer->isConfirmationRequired ())
+								{
+									$customer->sendNewAccountEmail ('confirmation');
+								}
+								else
+								{
+									$customer->sendNewAccountEmail ('registered');
+								}
 							}
 
 							// Log this user in.
