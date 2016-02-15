@@ -226,7 +226,7 @@ class OneAll_SocialLogin_Helper_Data extends Mage_Core_Helper_Abstract
 							$customer->setFirstname ($first_name);
 							$customer->setLastname ($last_name);
 							$customer->setEmail ($email);
-							$customer->setSkipConfirmationIfEmail ($email);
+							//$customer->setSkipConfirmationIfEmail ($email);
 							$customer->setPassword ($password);
 							$customer->setPasswordConfirmation ($password);
 							$customer->setConfirmation ($password);
@@ -237,36 +237,46 @@ class OneAll_SocialLogin_Helper_Data extends Mage_Core_Helper_Abstract
 							// Do we have any errors?
 							if (is_array ($errors) && count ($errors) > 0)
 							{
-								// This would break it for Twitter users as they have no first/lastname
-								Mage::getSingleton ('customer/session')->addError (implode (' ', $errors));
+								Mage::getSingleton ('core/session')->addError (implode (' ', $errors));
 								return false;
 							}
 
 							// Save user.
 							$customer->save ();
-
-							// Send email.
-							if (! $email_is_random)
-							{
-								if ($customer->isConfirmationRequired ())
-								{
-									$customer->sendNewAccountEmail ('confirmation');
-								}
-								else
-								{
-									$customer->sendNewAccountEmail ('registered');
-								}
-							}
-
-							// Log this user in.
 							$customer_id = $customer->getId ();
-
+							
 							// Save OneAll user_token.
 							$model = Mage::getModel ('oneall_sociallogin/entity');
 							$model->setData ('customer_id', $customer->getId ());
 							$model->setData ('user_token', $user_token);
 							$model->setData ('identity_token', $identity_token);
 							$model->save ();
+							
+							// Send email.
+							if (! $email_is_random)
+							{
+								// Site requires email confirmation.
+								if ($customer->isConfirmationRequired ())
+								{
+									$customer->sendNewAccountEmail ('confirmation');
+									Mage::getSingleton ('core/session')->addSuccess (
+											__ ('Account confirmation is required. Please, check your email for the confirmation link. To resend the confirmation email please <a href="%s">click here</a>.',
+											Mage::helper ('customer')->getEmailConfirmationUrl ($customer->getEmail ())));
+									return false;
+								}
+								else
+								{
+									$customer->sendNewAccountEmail ('registered');
+								}
+							}
+							// No email found in identity, but email confirmation required.
+							else if ($customer->isConfirmationRequired ())
+							{
+									Mage::getSingleton ('core/session')->addError (
+											__ ('Account confirmation by email is required. To provide an email address, <a href="%s">click here</a>.',
+											Mage::helper ('customer')->getEmailConfirmationUrl ('')));
+									return false;
+							}
 						}
 						// This is an existing customer.
 						else
@@ -288,7 +298,7 @@ class OneAll_SocialLogin_Helper_Data extends Mage_Core_Helper_Abstract
 						{
 							// Login
 							Mage::getSingleton ('customer/session')->loginById ($customer_id);
-
+							
 							// Done
 							return true;
 						}
