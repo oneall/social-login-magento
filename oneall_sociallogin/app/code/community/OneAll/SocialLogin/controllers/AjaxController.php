@@ -2,7 +2,7 @@
 
 /**
  * @package   	OneAll Social Login
- * @copyright 	Copyright 2014 http://www.oneall.com - All rights reserved.
+ * @copyright 	Copyright 2014-2016 http://www.oneall.com - All rights reserved
  * @license   	GNU/GPL 2 or later
  *
  * This program is free software; you can redistribute it and/or
@@ -23,6 +23,7 @@
  * http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
  */
+
 class OneAll_SocialLogin_AjaxController extends Mage_Core_Controller_Front_Action
 {
 	// Autodetect API Handler

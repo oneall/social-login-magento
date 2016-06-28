@@ -2,7 +2,7 @@
 
 /**
  * @package   	OneAll Social Login
- * @copyright 	Copyright 2014 http://www.oneall.com - All rights reserved.
+ * @copyright 	Copyright 2014-2016 http://www.oneall.com - All rights reserved
  * @license   	GNU/GPL 2 or later
  *
  * This program is free software; you can redistribute it and/or
@@ -24,11 +24,10 @@
  *
  */
 
-// Helper
 class OneAll_SocialLogin_Helper_Data extends Mage_Core_Helper_Abstract
 {
 	
-	const OA_USER_AGENT = 'SocialLogin/1.1.2 Magento/1.x (+http://www.oneall.com/)';
+	const OA_USER_AGENT = 'SocialLogin/1.1.4 Magento/1.x (+http://www.oneall.com/)';
 	
 	/**
 	 * Generate a random email address.
@@ -95,7 +94,7 @@ class OneAll_SocialLogin_Helper_Data extends Mage_Core_Helper_Abstract
 		$connection_token = Mage::app ()->getRequest ()->getParam ('connection_token');
 
 		// Callback Handler
-		if ($action == 'social_login' and ! empty ($connection_token))
+		if (strtolower ($action) == 'social_login' and ! empty ($connection_token))
 		{
 			// Read settings
 			$settings = array ();
@@ -162,6 +161,8 @@ class OneAll_SocialLogin_Helper_Data extends Mage_Core_Helper_Abstract
 						{
 							// Cleanup our table.
 							$oneall_entity->delete ();
+							
+							// Reset customer id
 							$customer_id = null;
 						}
 						

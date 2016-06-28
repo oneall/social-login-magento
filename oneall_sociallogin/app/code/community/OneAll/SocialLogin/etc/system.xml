@@ -131,16 +131,25 @@
 							<label>Amazon</label>
 							<frontend_type>Select</frontend_type>
 							<source_model>oneall_sociallogin/services</source_model>
-							<sort_order>1</sort_order>
+							<sort_order>10</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
 						</amazon>
+						<battlenet>
+							<label>Battle.Net</label>
+							<frontend_type>Select</frontend_type>
+							<source_model>oneall_sociallogin/services</source_model>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</battlenet>
 						<blogger>
 							<label>Blogger</label>
 							<frontend_type>Select</frontend_type>
 							<source_model>oneall_sociallogin/services</source_model>
-							<sort_order>2</sort_order>
+							<sort_order>30</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
@@ -149,16 +158,34 @@
 							<label>Disqus</label>
 							<frontend_type>Select</frontend_type>
 							<source_model>oneall_sociallogin/services</source_model>
-							<sort_order>3</sort_order>
+							<sort_order>40</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
 						</disqus>
+						<draugiem>
+							<label>Draugiem</label>
+							<frontend_type>Select</frontend_type>
+							<source_model>oneall_sociallogin/services</source_model>
+							<sort_order>50</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</draugiem>
+						<dribbble>
+							<label>Dribbble</label>
+							<frontend_type>Select</frontend_type>
+							<source_model>oneall_sociallogin/services</source_model>
+							<sort_order>60</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</dribbble>						
 						<facebook>
 							<label>Facebook</label>
 							<frontend_type>Select</frontend_type>
 							<source_model>oneall_sociallogin/services</source_model>
-							<sort_order>4</sort_order>
+							<sort_order>70</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
@@ -167,7 +194,7 @@
 							<label>Foursquare</label>
 							<frontend_type>Select</frontend_type>
 							<source_model>oneall_sociallogin/services</source_model>
-							<sort_order>5</sort_order>
+							<sort_order>80</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
@@ -176,7 +203,7 @@
 							<label>Github.com</label>
 							<frontend_type>Select</frontend_type>
 							<source_model>oneall_sociallogin/services</source_model>
-							<sort_order>6</sort_order>
+							<sort_order>90</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
@@ -185,7 +212,7 @@
 							<label>Google</label>
 							<frontend_type>Select</frontend_type>
 							<source_model>oneall_sociallogin/services</source_model>
-							<sort_order>7</sort_order>
+							<sort_order>100</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
@@ -194,7 +221,7 @@
 							<label>Instagram</label>
 							<frontend_type>Select</frontend_type>
 							<source_model>oneall_sociallogin/services</source_model>
-							<sort_order>8</sort_order>
+							<sort_order>110</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
@@ -203,7 +230,7 @@
 							<label>Linkedin</label>
 							<frontend_type>Select</frontend_type>
 							<source_model>oneall_sociallogin/services</source_model>
-							<sort_order>9</sort_order>
+							<sort_order>120</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
@@ -212,7 +239,7 @@
 							<label>Live journal</label>
 							<frontend_type>Select</frontend_type>
 							<source_model>oneall_sociallogin/services</source_model>
-							<sort_order>10</sort_order>
+							<sort_order>130</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
@@ -221,7 +248,7 @@
 							<label>Mail.ru</label>
 							<frontend_type>Select</frontend_type>
 							<source_model>oneall_sociallogin/services</source_model>
-							<sort_order>11</sort_order>
+							<sort_order>140</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
@@ -230,7 +257,7 @@
 							<label>Odnoklassniki</label>
 							<frontend_type>Select</frontend_type>
 							<source_model>oneall_sociallogin/services</source_model>
-							<sort_order>12</sort_order>
+							<sort_order>150</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
@@ -239,7 +266,7 @@
 							<label>Openid</label>
 							<frontend_type>Select</frontend_type>
 							<source_model>oneall_sociallogin/services</source_model>
-							<sort_order>13</sort_order>
+							<sort_order>160</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
@@ -248,16 +275,34 @@
 							<label>Paypal</label>
 							<frontend_type>Select</frontend_type>
 							<source_model>oneall_sociallogin/services</source_model>
-							<sort_order>14</sort_order>
+							<sort_order>170</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
 						</paypal>
+						<pinterest>
+							<label>Pinterest</label>
+							<frontend_type>Select</frontend_type>
+							<source_model>oneall_sociallogin/services</source_model>
+							<sort_order>180</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</pinterest>
+						<pixelpin>
+							<label>Pixelpin</label>
+							<frontend_type>Select</frontend_type>
+							<source_model>oneall_sociallogin/services</source_model>
+							<sort_order>190</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</pixelpin>
 						<reddit>
 							<label>Reddit</label>
 							<frontend_type>Select</frontend_type>
 							<source_model>oneall_sociallogin/services</source_model>
-							<sort_order>15</sort_order>
+							<sort_order>200</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
@@ -266,7 +311,7 @@
 							<label>Skyrock.com</label>
 							<frontend_type>Select</frontend_type>
 							<source_model>oneall_sociallogin/services</source_model>
-							<sort_order>16</sort_order>
+							<sort_order>210</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
@@ -275,7 +320,7 @@
 							<label>Stackexchange</label>
 							<frontend_type>Select</frontend_type>
 							<source_model>oneall_sociallogin/services</source_model>
-							<sort_order>17</sort_order>
+							<sort_order>220</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
@@ -284,7 +329,7 @@
 							<label>Steam</label>
 							<frontend_type>Select</frontend_type>
 							<source_model>oneall_sociallogin/services</source_model>
-							<sort_order>18</sort_order>
+							<sort_order>230</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
@@ -293,7 +338,7 @@
 							<label>Twitch.tv</label>
 							<frontend_type>Select</frontend_type>
 							<source_model>oneall_sociallogin/services</source_model>
-							<sort_order>19</sort_order>
+							<sort_order>240</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
@@ -302,7 +347,7 @@
 							<label>Twitter</label>
 							<frontend_type>Select</frontend_type>
 							<source_model>oneall_sociallogin/services</source_model>
-							<sort_order>20</sort_order>
+							<sort_order>250</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
@@ -311,7 +356,7 @@
 							<label>Vimeo</label>
 							<frontend_type>Select</frontend_type>
 							<source_model>oneall_sociallogin/services</source_model>
-							<sort_order>21</sort_order>
+							<sort_order>260</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
@@ -320,16 +365,16 @@
 							<label>Vkontakte</label>
 							<frontend_type>Select</frontend_type>
 							<source_model>oneall_sociallogin/services</source_model>
-							<sort_order>22</sort_order>
+							<sort_order>270</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
 						</vkontakte>
 						<windowslive>
-							<label>Windows live</label>
+							<label>Windows Live</label>
 							<frontend_type>Select</frontend_type>
 							<source_model>oneall_sociallogin/services</source_model>
-							<sort_order>23</sort_order>
+							<sort_order>280</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
@@ -338,16 +383,25 @@
 							<label>Wordpress</label>
 							<frontend_type>Select</frontend_type>
 							<source_model>oneall_sociallogin/services</source_model>
-							<sort_order>24</sort_order>
+							<sort_order>290</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
 						</wordpress>
+						<xing>
+							<label>XING</label>
+							<frontend_type>Select</frontend_type>
+							<source_model>oneall_sociallogin/services</source_model>
+							<sort_order>300</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</xing>
 						<yahoo>
 							<label>Yahoo</label>
 							<frontend_type>Select</frontend_type>
 							<source_model>oneall_sociallogin/services</source_model>
-							<sort_order>25</sort_order>
+							<sort_order>310</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
@@ -356,7 +410,7 @@
 							<label>Youtube</label>
 							<frontend_type>Select</frontend_type>
 							<source_model>oneall_sociallogin/services</source_model>
-							<sort_order>26</sort_order>
+							<sort_order>320</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>

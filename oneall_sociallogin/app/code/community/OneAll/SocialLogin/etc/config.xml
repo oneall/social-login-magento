@@ -2,7 +2,7 @@
 <config>
 	<modules>
 		<OneAll_SocialLogin>
-			<version>1.1.2</version>
+			<version>1.1.4</version>
 		</OneAll_SocialLogin>
 	</modules>
 
@@ -24,6 +24,7 @@
 			</updates>
 		</layout>
 	</frontend>
+	
 	<global>
 		<blocks>
 			<oneall_sociallogin>
@@ -82,8 +83,11 @@
 			</settings>
 			<services>
 				<amazon>setno</amazon>
+				<battlenet>setno</battlenet>
 				<blogger>setno</blogger>
 				<disqus>setno</disqus>
+				<draugiem>setno</draugiem>
+				<dribbble>setno</dribbble>
 				<facebook>setyes</facebook>
 				<foursquare>setno</foursquare>
 				<githubcom>setno</githubcom>
@@ -95,6 +99,8 @@
 				<odnoklassniki>setno</odnoklassniki>
 				<openid>setno</openid>
 				<paypal>setno</paypal>
+				<pinterest>setno</pinterest>
+				<pixelpin>setno</pixelpin>
 				<reddit>setno</reddit>
 				<skyrockcom>setno</skyrockcom>
 				<stackexchange>setno</stackexchange>
@@ -105,7 +111,9 @@
 				<vkontakte>setno</vkontakte>
 				<windowslive>setno</windowslive>
 				<wordpress>setno</wordpress>
+				<xing>setno</xing>
 				<yahoo>setno</yahoo>
+				<youtube>setno</youtube>
 			</services>			
 		</oneall_sociallogin>
 	</default>

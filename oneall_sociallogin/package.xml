@@ -1,19 +1,18 @@
 <?xml version="1.0"?>
 <package>
 	<name>OneAll_Sociallogin</name>
-	<version>1.1.2</version>
+	<version>1.1.4</version>
 	<stability>stable</stability>
 	<license>GNU/GPL 2 or later</license>
 	<channel>community</channel>
 	<extends />
 	<summary>Social Login allows your customers to login and register with
-		25+ Social Networks.</summary>
+		30+ Social Networks.</summary>
 	<description>Social Login for Magento is a professional extension that
 		allows your visitors to login and register with social networks like
 		for example Twitter, Facebook, LinkedIn and PayPal.
-		It increases your user conversion rate by simplifying the registration
-		process and provides permission-based social data retrieved from the
-		social network profiles.
+		It increases your conversion rate and sales by simplifying the registration
+		process and provides permission-based user data retrieved from the social network profiles.
 	</description>
 	<notes>A documentation is available here: http://docs.oneall.com/plugins/guide/social-login-magento/</notes>
 	<authors>

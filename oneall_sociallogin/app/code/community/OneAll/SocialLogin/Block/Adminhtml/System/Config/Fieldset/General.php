@@ -2,7 +2,7 @@
 
 /**
  * @package   	OneAll Social Login
- * @copyright 	Copyright 2014 http://www.oneall.com - All rights reserved.
+ * @copyright 	Copyright 2014-2016 http://www.oneall.com - All rights reserved
  * @license   	GNU/GPL 2 or later
  *
  * This program is free software; you can redistribute it and/or
@@ -23,6 +23,7 @@
  * http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
  */
+
 class OneAll_SocialLogin_Block_Adminhtml_System_Config_Fieldset_General extends Mage_Adminhtml_Block_System_Config_Form_Fieldset
 {
 	protected function _getHeaderHtml ($element)
@@ -37,6 +38,7 @@ class OneAll_SocialLogin_Block_Adminhtml_System_Config_Fieldset_General extends 
 			{
 				$html = '<div class="' . $this->_getFrontendClass ($element) . '">';
 			}
+			
 			$html .= $this->_getHeaderTitleHtml ($element);
 			$html .= '<input id="' . $element->getHtmlId () . '-state" name="config_state[' . $element->getId () . ']" type="hidden" value="' . (int) $this->_getCollapseState ($element) . '" />';
 			$html .= '<fieldset class="' . $this->_getFieldsetCss ($element) . '" id="' . $element->getHtmlId () . '">';
@@ -64,7 +66,8 @@ class OneAll_SocialLogin_Block_Adminhtml_System_Config_Fieldset_General extends 
 			{
 				$html .= '<div class="comment">' . $element->getComment () . '</div>';
 			}
-			// field label column
+			
+			// Field label column
 			$html .= '<table cellspacing="0" class="form-list"><colgroup class="label" /><colgroup class="value" />';
 			if (! $default)
 			{
