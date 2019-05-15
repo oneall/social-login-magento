@@ -2,7 +2,7 @@
 <config>
 	<modules>
 		<OneAll_SocialLogin>
-			<version>1.2.0</version>
+			<version>1.3.0</version>
 		</OneAll_SocialLogin>
 	</modules>
 
@@ -99,6 +99,7 @@
 				<livejournal>setno</livejournal>
 				<mailru>setno</mailru>
 				<meetup>setno</meetup>
+				<mixer>setno</mixer>
 				<odnoklassniki>setno</odnoklassniki>
 				<openid>setno</openid>
 				<paypal>setno</paypal>

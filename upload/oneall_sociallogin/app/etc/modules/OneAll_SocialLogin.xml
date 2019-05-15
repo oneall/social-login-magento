@@ -29,7 +29,7 @@
 		<OneAll_SocialLogin>
 			<active>true</active>
 			<codePool>community</codePool>
-			<version>1.2.0</version>
+			<version>1.3.0</version>
 		</OneAll_SocialLogin>
 	</modules>
 </config>

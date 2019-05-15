@@ -26,7 +26,7 @@
 
 class OneAll_SocialLogin_Helper_Data extends Mage_Core_Helper_Abstract
 {
-    const OA_USER_AGENT = 'SocialLogin/1.2.0 Magento/1.x (+http://www.oneall.com/)';
+    const OA_USER_AGENT = 'SocialLogin/1.3.0 Magento/1.x (+http://www.oneall.com/)';
 
     /**
      * Generate a random email address.

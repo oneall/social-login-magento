@@ -1,5 +1,5 @@
-# Social Login 1.2.0 for Magento 1.5+
-Social Login for Magento allows your users to login and register with 35+ social networks. 
+# Social Login 1.3.0 for Magento 1.5+
+Social Login for Magento allows your users to login and register with 40+ social networks. 
 It increases your Magento user registration rate by simplifying the registration process for 
 new users and provides permission-based social data retrieved from the social network profiles.
 
@@ -25,6 +25,7 @@ http://docs.oneall.com/plugins/guide/social-login-magento/
 * LiveJournal
 * Mail.ru
 * Meetup
+* Mixer
 * Odnoklassniki
 * OpenID
 * PayPal
